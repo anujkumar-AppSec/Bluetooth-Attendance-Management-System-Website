@@ -1,0 +1,516 @@
+<!--
+Author: Anuj Kumar
+anuj
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Professor Login</title>
+	<!-- Meta Tags -->
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="665946060686-3srlim439nvbanfvckpls1lcc0q4s4a3.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Bettering Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+	
+	
+	<script src="js/login.js"></script> 
+	<!-- // Meta Tags -->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
+	<!--testimonial flexslider-->
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!--fonts-->
+	<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,800" rel="stylesheet">
+	<!--//fonts-->
+
+</head>
+
+<body>
+	<div class="header">
+	<div class="top">
+					<div class="container">
+						
+							<div class="col-md-20 top-left">
+								<ul>
+									<li><i class="fa fa-map-marker" aria-hidden="true"></i> Gautam Buddha University, India</li>
+									<li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+(91) 9897870061"> +(91) 989 757 0061</a></li>
+									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:bluetoothattendancesystem@gmail.com">bluetoothattendancesystem@gmail.com</a></li>
+								</ul>
+							</div>
+							
+							
+							<div class="clearfix"></div>
+						
+					</div>
+	</div>
+		
+	<div class="top-bar-w3layouts">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a>Bluetooth Attendance Management System</a></h1>
+				</div>
+				<!-- navbar-header -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="howitwork.html">How It Work??</a></li>
+						<li><a href="login.html" class="active">Login</a></li>
+						
+					</ul>
+
+				</div>	
+		</div>
+	</div>
+
+<table cellspacing="20" cellpadding="20" align="center">
+    <tr>
+	<td>|</td>
+	<td>----------------------------</td>
+	<td>||</td>
+	<td>-----------------------</td>
+	<td>||</td>
+	<td>------------------------------------------------------</td>
+	<td>||</td>
+	<td>---------------------------</td>
+	<td>|</td>
+	</tr>
+	<tr>
+		<td>|</td>
+		<td>------Student Date-----</td>
+		<td>||</td>
+		
+		<td>-------Roll No-------</td>
+		<td>||</td>
+		<td>----------------Subject Name-------------------</td>
+		<td>||</td>
+		<td>---Present/Absent----</td>
+		<td>|</td>
+		<hr><br>
+	</tr>
+	<tr>
+	<td>|</td>
+	<td>----------------------------</td>
+	<td>||</td>
+	<td>-----------------------</td>
+	<td>||</td>
+	<td>------------------------------------------------------</td>
+	<td>||</td>
+	<td>---------------------------</td>
+	<td>|</td>
+	</tr>
+
+</table>
+
+	<center>
+    <section class="contact">
+	<div class="container">
+		
+		<center>	
+		    
+			<div class="contact-grids">
+			
+			
+				
+				         
+				         <label for="rno"><font color="FFFFFF"><b>Login With Gmail</b></font></label>
+						   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="white"></div>
+
+
+
+
+
+
+                         <script>
+						   
+						   
+						   var s_date= [];
+						   var roll_no = [];
+						   var total_date = [];
+						   var teacher_name = [];
+						   
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        // console.log('Full Name: ' + profile.getName());
+        // console.log('Given Name: ' + profile.getGivenName());
+        // console.log('Family Name: ' + profile.getFamilyName());
+        // console.log("Image URL: " + profile.getImageUrl());
+        // console.log("Email: " + profile.getEmail());
+		
+		
+		
+		
+		// <anuj>
+		var email = profile.getEmail();      // yaha se email aaya google signin wala 
+		
+		//---------------------------------------------------
+		// yaha se firebase start hai
+		 var config = {
+    apiKey: "AIzaSyCeAMhrmSzRTQDrIHAJLaaLOIar77vBlV8",
+    authDomain: "minorlayout-5ac31.firebaseapp.com",
+    databaseURL: "https://minorlayout-5ac31.firebaseio.com",
+    projectId: "minorlayout-5ac31",
+    storageBucket: "minorlayout-5ac31.appspot.com",
+    messagingSenderId: "552550458180"
+     };
+     firebase.initializeApp(config);
+	     
+     var database = firebase.database();
+
+     var userDataRef = firebase.database().ref("/");
+     userDataRef.once("value").then(function(snapshot) {
+     snapshot.forEach(function(childSnapshot) {
+	 
+     var key = childSnapshot.key;         //  ye firebase se id aayi h comapre ke liye
+	 
+      // console.log('key value of email ' +key);
+   
+    key=key.replace("<dot>",".");
+	console.log("new key value"+key);
+	//-------------------------------------------------------
+	// yaha comparison hua hai google aur firebase ki id ka
+	
+   if (email==key)
+     {
+		var mail2=email.replace(".","<dot>")
+		console.log("mail2 value is : "+mail2);
+		//-----------------------------------------------------------------
+		// yaha se email id se teacher ka naam niklega
+	var userDataRef = firebase.database().ref(mail2).orderByKey();
+	userDataRef.once("value").then(function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+	var key = childSnapshot.key;  // ye hai teacher ka naam
+	var childData = childSnapshot.val();              
+		// console.log(" teacher name is "+key);
+		var tname = key; 
+		
+		//------------------------------------------------------------
+		// yaha se teacher ke naam se branches aayengi
+		
+		var userDataRef = firebase.database().ref(mail2).child(tname).orderByKey();
+
+	userDataRef.once("value").then(function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+	var key = childSnapshot.key;
+	var childData = childSnapshot.val();              
+		// console.log(" branch value is  "+key); // yaha se branch aayegi 
+		var branch = key;
+		
+		//------------------------------------------------------------
+		// yaha se branches se subjects aayenge
+		
+		var userDataRef = firebase.database().ref(mail2).child(tname).child(branch).orderByKey();
+
+	userDataRef.once("value").then(function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+	var key = childSnapshot.key; 
+	var childData = childSnapshot.val();              
+		// console.log(" subject value is  "+key); // yaha se subjects aayenge 
+		var subjects = key;
+		
+		//------------------------------------------------------------
+		// yaha se subjects se MAC aayenge
+		
+		var userDataRef = firebase.database().ref(mail2).child(tname).child(branch).child(subjects).orderByKey();
+
+	userDataRef.once("value").then(function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+	var key = childSnapshot.key; 
+	var childData = childSnapshot.val();              
+		// console.log(" MAC value is  "+key); // yaha se MAC aayenge 
+		var MAC = key;
+		
+		//------------------------------------------------------------
+		// yaha se MAC se date aur roll no aayenge
+		
+		var userDataRef = firebase.database().ref(mail2).child(tname).child(branch).child(subjects).child(MAC).orderByKey();
+
+	userDataRef.once("value").then(function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+	var key = childSnapshot.key; 
+	var childData = childSnapshot.val();  
+	//	s_date.push(key);
+		roll_no.push(key);
+		// console.log(" DATE value is  "+key); // yaha se date aayenge
+		// console.log(" ROLLNO value is  "+childData); // yaha se rollno aayenge
+		
+		var pstudentdate = key;
+		var rollno = childData;
+		
+		$("table").append('<tr>'+
+	//  				'<td>'+roll_no+'</td>'+
+	 // 				'<td>'+s_date+'</td>'+
+	                '<td>|</td>'+
+					'<td>'+pstudentdate+'</td>'+
+					'<td>||</td>'+
+					
+	  				'<td>'+rollno+'</td>'+
+					'<td>||</td>'+
+					
+					'<td>'+subjects+'</td>'+
+					'<td>||</td>'+
+					'<td>Present</td>'+
+				    '<td>|</td>'
+					
+	  			+'</tr>')
+		
+		$("table").append('<tr>'+
+	//  				'<td>'+roll_no+'</td>'+
+	 // 				'<td>'+s_date+'</td>'+
+	                '<td>|</td>'+
+					'<td>----------------------------</td>'+
+					'<td>||</td>'+
+					
+	  				'<td>-----------------------</td>'+
+					'<td>||</td>'+
+					
+					'<td>------------------------------------------------------</td>'+
+					'<td>||</td>'+
+					'<td>---------------------------</td>'+
+				    '<td>|</td>'
+					
+	  			+'</tr>')
+		
+		
+		
+		
+		// ------------------
+		// ----Creating Table
+		
+
+//------------------------------------------------------------
+		// yaha se subject se total date aayengi
+		
+		var userDataRef = firebase.database().ref(mail2).child(tname).child(branch).child(subjects).child("TotalDate").orderByKey();
+
+	userDataRef.once("value").then(function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+	var key = childSnapshot.key; 
+	var childData = childSnapshot.val();              
+		// console.log(" TotalDate value is  "+key); // yaha se date aayenge
+		// console.log(" present value  "+childData); // yaha se rollno aayenge
+	//	total_date.push(key);
+		var totaldate = key;
+		
+		
+		
+		
+		});
+		});
+
+		
+		
+		
+		});
+		});
+		
+		
+		});
+		});
+		
+		
+		
+		
+		
+		});
+		});
+		
+		
+		
+		});
+		});
+		});
+		});
+
+	 
+	 
+	 
+	   // window.location.href="https://bluetoothattendancesystem.github.io/professorlogin2.html";
+     }
+    
+	
+  });
+});		 
+
+
+
+
+	
+  	
+
+
+
+//	document.writeln("You are not a registered professor.");		
+		
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        // console.log("ID Token: " + id_token);
+ 
+      };
+      
+        </script>
+						
+			</div>
+			
+			</div>	
+		
+		</center>
+	</div>
+	
+</section>
+</center>
+<!-- //contact -->
+
+<!-- footer -->
+	<div class="footer">
+	<div class="container">
+		<div class="f-bg-w3l">
+		<div class="col-md-4 w3layouts_footer_grid">
+					<h3>About Us</h3>
+					<p>Get the app on playstore named "Bluetooth Attendance Management System."</p>
+				</div>
+				<div class="col-md-5 w3layouts_footer_grid hpft">
+					<h3>Contact Us</h3>
+					    <ul class="con_inner_text">
+							<li><span class="fa fa-map-marker" aria-hidden="true"></span>Gautam Buddha University,Gr. Noida,India <label></label></li>
+							<li><span class="fa fa-envelope-o" aria-hidden="true"></span> <a href="mailto:bluetoothattendancesystem@gmail.com">bluetoothattendancesystem@gmail.com</a></li>
+							<li><span class="fa fa-phone" aria-hidden="true"></span><a href="tel:+(91) 9897870061"> +(91) 989 757 0061</a</li>
+						</ul>
+
+					
+				</div>
+				
+				<div class="clearfix"> </div>		
+			</div>	
+			</div>
+	</div>
+         
+	
+	<!-- //footer -->
+        
+
+
+
+	<!-- Required Scripts -->
+	<!-- Common Js -->
+	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<!--// Common Js -->
+	<!--search-bar-agileits-->
+	<script src="js/main.js"></script>
+	<!--//search-bar-agileits-->
+	<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- start-smoth-scrolling -->
+
+	<!-- Banner Responsive slider -->
+	<script src="js/responsiveslides.min.js"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			// Slideshow 3
+			$("#slider3").responsiveSlides({
+				auto: true,
+				pager: false,
+				nav: true,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+	<!-- // Banner Responsive slider -->
+
+	<!-- flexSlider -->
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$('.flexslider').flexslider({
+				animation: "slide",
+				start: function (slider) {
+					$('body').removeClass('loading');
+				}
+			});
+		});
+	</script>
+	<!-- //flexSlider -->
+
+	<!-- stats -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.countup.js"></script>
+	<script>
+		$('.counter-agileits-w3layouts').countUp();
+	</script>
+	<!-- //stats -->
+	<!-- smooth scrolling -->
+	<script type="text/javascript">
+
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+		});
+	</script>
+	<a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!-- //smooth scrolling -->
+
+ <script src="js/bootstrap.js"></script>
+
+
+	<!--// Required Scripts -->
+</body>
+
+</html>

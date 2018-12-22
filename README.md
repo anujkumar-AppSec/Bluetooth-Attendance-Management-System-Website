@@ -1,2 +1,2 @@
-# Bluetooth-Attendance-Management-System-Website
-Website Code (Minor Project)
+# bluetoothattendancesystem.github.io
+Website for bluetooth attendance system
